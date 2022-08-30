@@ -4,9 +4,9 @@ const CartWidget = (props) => {
   return (
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512;", width: '45px', height: '45px', marginLeft: '25px', cursor: 'pointer'}} xmlSpace="preserve">
+	 viewBox="0 0 512 512" style={{ enableBackground: "new 0 0 512 512", width: '45px', height: '45px', marginLeft: '25px', cursor: 'pointer'}} xmlSpace="preserve">
 <circle style={{ fill: "#0575A5"}} cx="256" cy="256" r="256"/>
-<path style={{ fill: "#025E90;"}} d="M390.986,198.587c-1.434-1.464-3.331-2.194-5.233-2.194h-22.848l-35.205-35.21l-35.215,35.21h-44.314
+<path style={{ fill: "#025E90"}} d="M390.986,198.587c-1.434-1.464-3.331-2.194-5.233-2.194h-22.848l-35.205-35.21l-35.215,35.21h-44.314
 	l-51.715-51.712l-1.682-1.682c-0.108-0.113-0.218-0.184-0.328-0.294c-3.658-3.144-8.343-4.864-13.169-4.864h-37.883
 	c-2.194-4.055-6.513-6.802-11.448-6.802c-7.245,0-13.094,5.85-13.094,13.092c0,0.86,0.1,1.687,0.256,2.493
 	c0.046,0.256,0.138,0.492,0.197,0.735c0.138,0.543,0.292,1.078,0.494,1.59c0.115,0.292,0.261,0.563,0.394,0.837
