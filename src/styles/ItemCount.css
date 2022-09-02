@@ -3,3 +3,8 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+.list {
+  display: flex;
+  flex-direction: row;
+}
