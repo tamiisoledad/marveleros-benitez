@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card } from 'react-bootstrap';
-import ItemCount from './ItemCount';
+import { Card, Button } from 'react-bootstrap';
 
 const Item = ({ image, title, description, price }) => {
   return (
@@ -14,7 +13,7 @@ const Item = ({ image, title, description, price }) => {
         <Card.Text>
           $ {price}
         </Card.Text>
-        <ItemCount stock={5} initial={1}/>
+        <Button variant="primary">Ver más</Button>
       </Card.Body>
     </Card>
   );
