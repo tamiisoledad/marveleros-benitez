@@ -1,11 +1,15 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import NavBar from './NavBar';
 
 const ItemListContainer = () => {
+  const {id} = useParams();
+
   return (
     <>
-      <h1>ECOMMERCE EN DESARROLLO</h1>
-      <ItemList/>
+      <NavBar/>
+      <ItemList id={id}/>
     </>
   );
 };

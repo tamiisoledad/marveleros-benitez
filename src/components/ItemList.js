@@ -7,14 +7,14 @@ const products =[
   {
     id: 1,
     title: 'IronMan',
-    description: 'Juguete super vendido',
+    description: 'Pelicula',
     price: 500,
     image: 'https://http2.mlstatic.com/D_NQ_NP_857847-MLA48404780463_122021-O.webp'
   },
   {
     id: 2,
-    title: 'Capitan America',
-    description: 'Juguete super vendido',
+    title: 'CapitanAmerica',
+    description: 'Disfraz!!!',
     price: 300,
     image: 'https://http2.mlstatic.com/D_NQ_NP_632516-MLA49389975458_032022-O.webp'
   },
@@ -27,23 +27,32 @@ const products =[
   }
 ]
 
-const ItemList = () => {
+const ItemList = ({ id }) => {
   const [listProducts, setListProducts] = useState([])
 
-  const getProducts = async () => {
-    setTimeout(() => setListProducts(products), 2000);
+  const getProducts = async (id) => {
+    setTimeout(() => {
+      if (id) {
+        const newProducts = products.filter((p) => p.title.toLowerCase() === id.toLowerCase());
+
+        setListProducts(newProducts);
+      } else {
+        setListProducts(products)
+      }
+    }, 2000);
   }
 
   useEffect(() => {
-    getProducts();
-  }, [])
+    setListProducts([])
+    getProducts(id);
+  }, [id])
 
   return (
     <>
       {!listProducts.length && <div>Cargando...</div>}
       <div className='list'>
       {listProducts.length && listProducts.map((p) => (
-       <Item key={p.id} image={p.image} title={p.title} description={p.description} price={p.price}/>
+       <Item key={p.id} image={p.image} title={p.title} description={p.description} price={p.price} id={p.id}/>
       ))}
       </div>
     </>

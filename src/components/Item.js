@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Item = ({ image, title, description, price }) => {
+const Item = ({ image, title, description, price, id }) => {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={image} />
@@ -13,7 +14,7 @@ const Item = ({ image, title, description, price }) => {
         <Card.Text>
           $ {price}
         </Card.Text>
-        <Button variant="primary">Ver más</Button>
+        <Button variant="primary"><Link to={`/detail/${id}`} style={{color: 'white'}}>Ver más</Link></Button>
       </Card.Body>
     </Card>
   );

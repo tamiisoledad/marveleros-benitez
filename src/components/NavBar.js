@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar, Nav, NavDropdown, Form, Button } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -13,11 +14,11 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link href="#features">Inicio</Nav.Link>
             <NavDropdown title="Categorias" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Peliculas</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1"><Link to='/category/ironman'>Peliculas</Link></NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Juguetes
+                <Link to='/category/spiderman'>Juguetes</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Disfraces</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3"> <Link to='category/capitanamerica'>Disfraces</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#deets">Contacto</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
