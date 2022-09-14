@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from 'react-bootstrap';
 import '../styles/ItemCount.css'
+import { Link } from 'react-router-dom';
 
 const ItemCount = ({ initial, stock}) => {
   const [count, setCount] = useState(initial);
@@ -37,6 +38,7 @@ const ItemCount = ({ initial, stock}) => {
         >
           Agregar al carrito
       </Button>
+      <Link to='/cart'>Terminar compra</Link>
     </>
   );
 };
