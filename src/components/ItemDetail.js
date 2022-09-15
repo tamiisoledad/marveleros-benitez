@@ -18,7 +18,13 @@ const ItemDetail = (props) => {
         <Card.Text>
           $ {props.item.price}
         </Card.Text>
-        <ItemCount stock={5} initial={1}/>
+        <ItemCount stock={5} initial={1} product={{
+          title: props.title,
+          price: props.price,
+          description: props.description,
+          image: props.image,
+          id: props.id
+        }}/>
       </Card.Body>
     </Card>
     </>

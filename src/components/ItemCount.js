@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form } from 'react-bootstrap';
 import '../styles/ItemCount.css'
 import { Link } from 'react-router-dom';
+import CartContext from './CartContext';
 
-const ItemCount = ({ initial, stock}) => {
+const ItemCount = ({ initial, stock, product }) => {
   const [count, setCount] = useState(initial);
   const [disable, setDisable] = useState(false);
-  const [cart, setCart] = useState(null);
+  const { addItem } = useContext(CartContext);
 
   const changeCount = (value) => {
     if (count >= stock && value === 1) return setDisable(true);
@@ -18,8 +19,7 @@ const ItemCount = ({ initial, stock}) => {
   }
 
   const onAdd = () => {
-    setCart(count);
-    console.log(cart)
+    addItem(product)
   }
 
   return (
