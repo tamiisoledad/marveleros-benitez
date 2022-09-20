@@ -5,7 +5,6 @@ import '../styles/ItemCount.css'
 import ItemCount from './ItemCount';
 
 const ItemDetail = (props) => {
-  console.log(props)
   return (
     <>
       <Card style={{ width: '40rem', margin: '0 auto'}}>
