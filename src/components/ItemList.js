@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import '../styles/ItemCount.css'
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 
 
 const products =[
@@ -45,6 +46,15 @@ const ItemList = ({ id }) => {
   useEffect(() => {
     setListProducts([])
     getProducts(id);
+
+    const db = getFirestore();
+
+    const itemCollection = collection(db, 'items');
+    getDocs(itemCollection).then((snapshot) => {
+      listProducts.push(snapshot.docs.map((doc) => (
+        {id: doc.id, ...doc.data()}
+      )))
+    })
   }, [id])
 
   return (

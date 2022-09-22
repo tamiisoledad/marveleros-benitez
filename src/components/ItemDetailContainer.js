@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import NavBar from './NavBar';
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 const products = [
   {
@@ -40,6 +41,14 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getItem()
+    const db = getFirestore();
+
+    const biciRef = doc(db, 'items', 'wWQTlRFUTxYSMemhRi8q');
+    getDoc(biciRef).then((snapshot) => {
+      if (snapshot.exists()){
+        setItem({id: snapshot.id, ...snapshot.data()});
+      }
+    })
   }, [])
   return (
     <>
