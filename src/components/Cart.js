@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import CartContext from './CartContext';
+import React from 'react';
+import { useCart } from './CartContext';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { productsCart, removeItem } = useContext(CartContext);
+  const { productsCart, removeItem } = useCart();
   return (
     <Table striped bordered hover variant="dark">
       <thead>

@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Cart from "./components/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-import CartContext from "./components/CartContext";
+import { CartContext } from "./components/CartContext";
 
 function App() {
   return (

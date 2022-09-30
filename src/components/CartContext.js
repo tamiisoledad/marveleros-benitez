@@ -1,8 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const context = createContext();
 
-const CartContext = ({ children }) => {
+export const CartContext = ({ children }) => {
   const [productsCart, setProductsCart] = useState([]);
 
   const removeItem = (itemId) => {
@@ -44,4 +44,4 @@ const CartContext = ({ children }) => {
    </context.Provider>
 }
 
-export default CartContext;
+export const useCart = () => useContext(CartContext);
